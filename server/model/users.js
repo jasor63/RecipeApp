@@ -1,14 +1,9 @@
-import mongoose from "mongoose";
+import mongoose, { Mongoose } from "mongoose";
 
-mongoose.connect("mongodb+srv://jasor:jasor123@auth.ggmeqvc.mongodb.net/RecipeApp?retryWrites=true&w=majority").then(() => {
-    console.log("Mongo Connected");
-}).catch((err) => {
-    console.log(err);
+const userSchema = new mongoose.Schema({
+  username: { type: String },
+  password: { type: String, required: true },
+  savedRecipes: [{ type: mongoose.Schema.Types.ObjectId, ref: "recipes" }],
 });
 
-const userSchema = new mongoose.Schema ({
-    username: {type: String},
-    password: {type: String, required: true}
-});
-
-export const userModel = mongoose.model('user', userSchema);
+export const userModel = mongoose.model("user", userSchema);

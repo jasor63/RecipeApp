@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 export default function Auth() {
   return (
@@ -13,6 +15,27 @@ export default function Auth() {
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  // eslint-disable-next-line
+  const [cookie, setCookie] = useCookies(["access_token"]);
+
+  const navigate = useNavigate();
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:3001/auth/login", {
+        username,
+        password,
+      });
+
+      // console.log(response);
+      setCookie("access_token", response.data.token);
+      localStorage.setItem("UID", response.data.userId);
+      navigate("/");
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   return (
     <Form
@@ -21,6 +44,7 @@ const Login = () => {
       setUsername={setUsername}
       password={password}
       setPassword={setPassword}
+      handleSubmit={handleSubmit}
     />
   );
 };
