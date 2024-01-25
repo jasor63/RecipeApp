@@ -16,25 +16,35 @@ function Navbar() {
 
   return (
     <div>
-      <ul>
+      <ul className="nav--parent">
         <li>
-          <Link to="/">HOME</Link>
+          <Link className="nav--home" to="/">
+            HOME
+          </Link>
         </li>
         <li>
-          <Link to="/create-recipe">CREATE RECIPE</Link>
+          <Link className="nav--cr" to="/create-recipe">
+            CREATE RECIPE
+          </Link>
         </li>
         {cookie.access_token ? (
           <>
             <li>
-              <Link to="/saved-recipe">SAVED RECIPE</Link>
+              <Link className="nav--sr" to="/saved-recipe">
+                SAVED RECIPE
+              </Link>
             </li>
             <li>
-              <button onClick={logout}>Logout</button>
+              <button className="nav--btn" onClick={logout}>
+                LOGOUT
+              </button>
             </li>
           </>
         ) : (
           <li>
-            <Link to="/auth">LOGIN/REGISTER</Link>
+            <Link className="nav--lr" to="/auth">
+              LOGIN/REGISTER
+            </Link>
           </li>
         )}
       </ul>

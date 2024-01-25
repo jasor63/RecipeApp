@@ -2,13 +2,13 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div>
+    <div className="footer--parent">
       <p>
-        Made By{" "}
+        FASHIONED BY{" "}
         <a href="http://github.com/jasor63" target="_blank">
-          Jasor
+          JASOR
         </a>{" "}
-        With Love. (Version 1.0.0)
+        (v1.0)
       </p>
     </div>
   );

@@ -1,0 +1,85 @@
+ul {
+  list-style-type: none;
+}
+
+.home--parent {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 55px;
+}
+
+.home--card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 60px;
+  flex: 1 1 350px;
+  justify-content: space-around;
+}
+
+.home--card > li {
+  border: 2px solid rgb(219, 214, 214);
+  padding: 20px 0 20px 20px;
+  height: min-content;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.home--save--button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 7px 20px;
+  border: 1px solid black;
+  font-size: 0.7rem;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: 0.25s;
+}
+
+.home--save--button:hover:enabled {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.home--save--button[disabled] {
+  background-color: rgb(214, 209, 209);
+  color: black;
+  padding: 7px 20px;
+}
+
+.home--ingredients {
+  width: 270px;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+.home--instructions {
+  width: 300px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: rgb(83, 79, 79);
+}
+
+.home--recipe--img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* .home--recipe--img--parent {
+  text-align: center;
+} */
+
+.home--time {
+  margin-top: 10px;
+}

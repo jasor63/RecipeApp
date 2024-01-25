@@ -26,7 +26,10 @@ export default function CreateRecipe() {
   };
 
   const addIngredient = () => {
-    setRecipe({ ...recipe, ingredients: [...recipe.ingredients, ""] });
+    setRecipe({
+      ...recipe,
+      ingredients: [...recipe.ingredients, ""],
+    });
   };
 
   const handleIngredientChange = (event, index) => {
@@ -52,19 +55,23 @@ export default function CreateRecipe() {
 
   return (
     <div className="create--recipe--parent">
-      <h1>Create Recipe</h1>
+      <h1 className="cr--heading">CREATE RECIPE</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Recipe Name</label>
         <input
+          className="cr--input"
           type="text"
           name="name"
           id="name"
           value={recipe.name}
           onChange={handleChange}
         />
-        <label htmlFor="ingredients">Ingredients</label>
+        <label className="cr--label" htmlFor="ingredients">
+          Ingredients(Click the btn to add field)
+        </label>
         {recipe.ingredients.map((ingredient, index) => (
           <input
+            className="cr--input"
             key={index}
             type="text"
             name="ingredients"
@@ -73,36 +80,47 @@ export default function CreateRecipe() {
             onChange={(event) => handleIngredientChange(event, index)}
           />
         ))}
-        <button type="button" onClick={addIngredient}>
+        <button className="cr--button" type="button" onClick={addIngredient}>
           Add Ingredient
         </button>
-        <label htmlFor="instructions">Instructions</label>
+        <label className="cr--label" htmlFor="instructions">
+          Instructions
+        </label>
         <textarea
+          className="cr--input"
           cols="30"
-          rows="10"
+          rows="5"
           type="text"
           name="instructions"
           id="instructions"
           value={recipe.instructions}
           onChange={handleChange}
         ></textarea>
-        <label htmlFor="imageUrl">Image Url</label>
+        <label className="cr--label" htmlFor="imageUrl">
+          Image Url
+        </label>
         <input
+          className="cr--input"
           type="text"
           name="imageUrl"
           id="imageUrl"
           value={recipe.imageUrl}
           onChange={handleChange}
         />
-        <label htmlFor="time">Cooking Time</label>
+        <label className="cr--label" htmlFor="time">
+          Cooking Time
+        </label>
         <input
+          className="cr--input"
           type="number"
           name="time"
           id="time"
           value={recipe.time}
           onChange={handleChange}
         />
-        <button type="submit">Create Recipe</button>
+        <button className="cr--button" type="submit">
+          Create Recipe
+        </button>
       </form>
     </div>
   );

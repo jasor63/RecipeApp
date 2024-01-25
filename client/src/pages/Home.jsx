@@ -62,28 +62,42 @@ export default function Home() {
   const isSaved = (id) => savedRecipes.includes(id);
 
   return (
-    <div>
-      <h1>Recipes</h1>
-      <ul>
+    <div className="home--parent">
+      <h1 className="cr--heading">RECIPES</h1>
+      <ul className="home--card">
         {recipes.map((recipe) => (
           <li key={recipe._id}>
             <div>
               <h3>{recipe.name}</h3>
               <button
+                className="home--save--button"
                 onClick={() => savedRecipe(recipe._id)}
                 disabled={isSaved(recipe._id)}
               >
                 {isSaved(recipe._id) ? "Saved" : "Save"}
               </button>
             </div>
-            <div>
-              <h4>{recipe.ingredients}</h4>
+            <div className="home--ingredients">
+              {`${recipe.ingredients
+                .map((str) => str + " |")
+                .join("")
+                .substring(0, 5)}...`}
             </div>
             <div>
-              <p>{recipe.instructions}</p>
+              <p className="home--instructions">{`${recipe.instructions.substring(
+                0,
+                30
+              )}...`}</p>
             </div>
-            <img src={recipe.imageUrl} alt={`${recipe.name}-img`} />
-            <h5>{`Cooking Time: ${recipe.time} minutes`}</h5>
+            <div className="home--recipe--img--parent">
+              <img
+                className="home--recipe--img"
+                src={recipe.imageUrl}
+                alt={`${recipe.name}-img`}
+              />
+            </div>
+
+            <h5 className="home--time">{`Cooking Time: ${recipe.time} minutes`}</h5>
           </li>
         ))}
       </ul>

@@ -1,0 +1,62 @@
+.create--recipe--parent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 55px;
+}
+
+.create--recipe--parent > form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 5px;
+  border: 2px solid rgb(155, 147, 147);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.cr--heading {
+  letter-spacing: 4px;
+  font-size: 2rem;
+}
+
+.cr--label {
+  margin-top: 10px;
+}
+
+.cr--input {
+  outline: none;
+  padding: 7px 0 7px 5px;
+  border-radius: 7px;
+  border: solid;
+  border-width: 1px;
+}
+
+.cr--input:focus {
+  border: 2.7px solid rgb(71, 185, 214);
+}
+
+.cr--button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 8px 30px;
+  border: 1px solid black;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  border-radius: 10px;
+  transition: 0.25s;
+}
+
+.cr--button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.cr--button[type="button"] {
+  margin-top: 3px;
+}

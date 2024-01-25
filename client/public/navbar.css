@@ -1,0 +1,44 @@
+.nav--parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1.3rem 0;
+  margin-bottom: 2.07rem;
+  background-color: rgb(29, 28, 28);
+}
+
+.nav--home,
+.nav--cr,
+.nav--sr,
+.nav--lr {
+  text-decoration: none;
+  color: rgb(168, 155, 155);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  transition: 0.3s;
+}
+
+.nav--home:hover,
+.nav--cr:hover,
+.nav--sr:hover,
+.nav--lr:hover {
+  color: white;
+}
+
+.nav--btn {
+  background-color: transparent;
+  border: none;
+  color: rgb(255, 86, 86);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+  -webkit-text-stroke: 0.6px rgb(255, 86, 86);
+}
+
+.nav--btn:hover {
+  color: red;
+  -webkit-text-stroke: 1px red;
+}

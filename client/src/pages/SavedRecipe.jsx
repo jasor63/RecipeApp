@@ -23,22 +23,33 @@ export default function SavedRecipe() {
   }, []);
 
   return (
-    <div>
-      <h1>Saved Recipes</h1>
-      <ul>
+    <div className="home--parent">
+      <h1 className="cr--heading">SAVED RECIPES</h1>
+      <ul className="home--card">
         {savedRecipes.map((recipe) => (
           <li key={recipe._id}>
             <div>
               <h3>{recipe.name}</h3>
             </div>
+            <div className="home--ingredients">{`${recipe.ingredients
+              .map((str) => str + " |")
+              .join("")
+              .substring(0, 5)}...`}</div>
             <div>
-              <h4>{recipe.ingredients}</h4>
+              <p className="home--instructions">{`${recipe.instructions.substring(
+                0,
+                30
+              )}...`}</p>
             </div>
-            <div>
-              <p>{recipe.instructions}</p>
+            <div className="home--recipe--img--parent">
+              <img
+                className="home--recipe--img"
+                src={recipe.imageUrl}
+                alt={`${recipe.name}-img`}
+              />
             </div>
-            <img src={recipe.imageUrl} alt={`${recipe.name}-img`} />
-            <h5>{`Cooking Time: ${recipe.time} minutes`}</h5>
+
+            <h5 className="home--time">{`Cooking Time: ${recipe.time} minutes`}</h5>
           </li>
         ))}
       </ul>

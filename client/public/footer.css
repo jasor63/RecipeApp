@@ -1,0 +1,26 @@
+.footer--parent {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  padding: 12px 0;
+  backdrop-filter: brightness(100%) blur(4px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 0.1px solid rgb(255, 255, 255);
+}
+
+.footer--parent > p {
+  letter-spacing: 3px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.footer--parent > p > a {
+  text-decoration: none;
+  color: #7293f8;
+  transition: 0.25s;
+}
+
+.footer--parent > p > a:hover {
+  color: #001b79;
+}

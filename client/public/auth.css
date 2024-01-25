@@ -1,0 +1,73 @@
+* {
+  font-family: "Inter Tight", Arial, Helvetica;
+  letter-spacing: 1.2px;
+  padding: 0;
+  margin: 0;
+}
+
+.form--super--parent {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.form--parent {
+  border: 2px solid rgb(155, 147, 147);
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.form--parent > form {
+  text-align: center;
+}
+
+.form--heading {
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 30px;
+  letter-spacing: 4px;
+}
+
+.form--username,
+.form--password {
+  padding-top: 25px;
+}
+
+.form--username > label > input,
+.form--password > label > input {
+  outline: none;
+  padding: 7px 0 7px 5px;
+  width: 250px;
+  border-radius: 7px;
+  border: solid;
+  border-width: 1px;
+}
+
+.form--username > label > input:focus,
+.form--password > label > input:focus {
+  border: 2.7px solid rgb(71, 185, 214);
+}
+
+.form--button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 8px 30px;
+  border: 1px solid black;
+  font-size: 0.9rem;
+  margin: 30px 0;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  transition: 0.25s;
+}
+
+.form--button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
+  font-weight: 500;
+}

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Auth() {
   return (
-    <div>
+    <div className="form--super--parent">
       <Login />
       <Register />
     </div>
@@ -39,7 +39,7 @@ const Login = () => {
 
   return (
     <Form
-      name="Login"
+      name="LOGIN"
       username={username}
       setUsername={setUsername}
       password={password}
@@ -68,7 +68,7 @@ const Register = () => {
 
   return (
     <Form
-      name="Register"
+      name="REGISTER"
       username={username}
       setUsername={setUsername}
       password={password}
@@ -87,12 +87,12 @@ function Form({
   handleSubmit,
 }) {
   return (
-    <div>
-      <h3>{name}</h3>
+    <div className="form--parent">
+      <h3 className="form--heading">{name}</h3>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form--username">
           <label>
-            Username
+            Username &nbsp;
             <input
               type="text"
               name="username"
@@ -103,9 +103,9 @@ function Form({
             />
           </label>
         </div>
-        <div>
+        <div className="form--password">
           <label>
-            Password
+            Password &nbsp;
             <input
               type="password"
               name="password"
@@ -116,7 +116,7 @@ function Form({
             />
           </label>
         </div>
-        <button>{name}</button>
+        <button className="form--button">{name}</button>
       </form>
     </div>
   );
