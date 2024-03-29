@@ -1,9 +1,0 @@
-[build]
-  command = "CI='' false"
-  publish = "/"
-  base ="/"
-
-[[redirects]]
-  from = "/*"
-  to = "/public/index.html"
-  status = 200
